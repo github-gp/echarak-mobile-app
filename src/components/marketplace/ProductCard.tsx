@@ -23,9 +23,9 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/product/${product.id}`}>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden active:scale-95 transition-transform cursor-pointer">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden active:scale-95 transition-transform cursor-pointer border border-slate-200 hover:border-brand-primary hover:shadow-lg">
         {/* Product Image */}
-        <div className="relative h-40 bg-gradient-to-br from-green-100 to-green-200">
+        <div className="relative h-40 bg-gradient-to-br from-emerald-50 to-emerald-100">
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-4xl">🌿</span>
           </div>
@@ -43,16 +43,16 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Product Info */}
         <div className="p-3">
-          <h3 className="font-semibold text-gray-900 text-sm mb-1 line-clamp-1">
+          <h3 className="font-semibold text-slate-900 text-sm mb-1 line-clamp-1">
             {product.name}
           </h3>
-          <p className="text-xs text-gray-500 italic mb-2">{product.botanicalName}</p>
+          <p className="text-xs text-slate-500 italic mb-2">{product.botanicalName}</p>
 
           {/* Rating */}
           <div className="flex items-center gap-1 mb-2">
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{product.rating}</span>
-            <span className="text-xs text-gray-500">({product.reviews})</span>
+            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+            <span className="text-sm font-medium text-slate-900">{product.rating}</span>
+            <span className="text-xs text-slate-500">({product.reviews})</span>
           </div>
 
           {/* Price */}
@@ -60,11 +60,11 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className="text-lg font-bold text-brand-primary">
               {formatCurrency(product.price)}
             </span>
-            <span className="text-xs text-gray-500">/{product.unit}</span>
+            <span className="text-xs text-slate-500">/{product.unit}</span>
           </div>
 
           {/* Seller Info */}
-          <div className="flex items-center gap-1 text-xs text-gray-600 mb-2">
+          <div className="flex items-center gap-1 text-xs text-slate-600 mb-2">
             <MapPin className="w-3 h-3" />
             <span className="line-clamp-1">{product.seller}</span>
           </div>
@@ -72,7 +72,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Certifications */}
           <div className="flex flex-wrap gap-1">
             {product.certifications.map((cert) => (
-              <div key={cert} className="flex items-center gap-1 text-xs text-green-700">
+              <div key={cert} className="flex items-center gap-1 text-xs text-emerald-700">
                 <CheckCircle className="w-3 h-3" />
                 <span>{cert}</span>
               </div>

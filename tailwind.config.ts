@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: '#FF6B2C',
-          secondary: '#2C3E50',
-          accent: '#3498DB',
-          success: '#27AE60',
-          warning: '#F39C12',
-          error: '#E74C3C',
+          primary: '#1E40AF', // Professional Blue
+          secondary: '#065F46', // Deep Green
+          accent: '#0891B2', // Cyan
+          success: '#059669', // Emerald
+          warning: '#D97706', // Amber
+          error: '#DC2626', // Red
         },
       },
       fontFamily: {
@@ -26,4 +26,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-

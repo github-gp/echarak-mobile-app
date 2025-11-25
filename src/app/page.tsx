@@ -7,29 +7,29 @@ import { TrendingUp, Truck, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       <MobileHeader />
 
-      {/* Hero Banner */}
-      <div className="bg-gradient-to-r from-brand-primary to-orange-600 text-white p-6">
+      {/* Hero Banner - Government Blue */}
+      <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-6">
         <h2 className="text-2xl font-bold mb-2">India's Premier</h2>
         <h3 className="text-xl mb-3">Medicinal Plants Marketplace</h3>
-        <p className="text-sm opacity-90">Connecting farmers, traders & manufacturers</p>
+        <p className="text-sm text-blue-100">Connecting farmers, traders & manufacturers</p>
       </div>
 
       {/* Feature Cards */}
       <div className="grid grid-cols-3 gap-3 p-4 -mt-6">
-        <div className="bg-white rounded-lg shadow-md p-3 text-center">
+        <div className="bg-white rounded-lg shadow-md p-3 text-center border border-slate-200">
           <Truck className="w-6 h-6 text-brand-primary mx-auto mb-1" />
-          <p className="text-xs font-medium text-gray-700">FarEye Tracking</p>
+          <p className="text-xs font-medium text-slate-700">FarEye Tracking</p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-3 text-center">
-          <Shield className="w-6 h-6 text-green-600 mx-auto mb-1" />
-          <p className="text-xs font-medium text-gray-700">Quality Certified</p>
+        <div className="bg-white rounded-lg shadow-md p-3 text-center border border-slate-200">
+          <Shield className="w-6 h-6 text-emerald-600 mx-auto mb-1" />
+          <p className="text-xs font-medium text-slate-700">Quality Certified</p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-3 text-center">
-          <TrendingUp className="w-6 h-6 text-blue-600 mx-auto mb-1" />
-          <p className="text-xs font-medium text-gray-700">Live Pricing</p>
+        <div className="bg-white rounded-lg shadow-md p-3 text-center border border-slate-200">
+          <TrendingUp className="w-6 h-6 text-cyan-600 mx-auto mb-1" />
+          <p className="text-xs font-medium text-slate-700">Live Pricing</p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* Products Section */}
       <div className="p-4 pt-2">
-        <h3 className="text-lg font-bold text-gray-900 mb-3">
+        <h3 className="text-lg font-bold text-slate-900 mb-3">
           Premium Medicinal Plants
         </h3>
       </div>
