@@ -1,5 +1,8 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
+
 import { useSearchParams, useRouter } from 'next/navigation';
 import { sampleUser } from '@/data/sampleProducts';
 import { formatCurrency } from '@/lib/utils';
