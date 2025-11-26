@@ -45,7 +45,7 @@ export default function SellerDashboardPage() {
       </div>
 
       {/* Stats Overview */}
-      <div className="bg-gradient-to-r from-brand-primary to-orange-600 text-white p-4 mb-4">
+      <div className="bg-gradient-to-r from-brand-primary to-orange-600 text-slate-900 p-4 mb-4">
         <p className="text-sm opacity-90 mb-2">Total Revenue (This Month)</p>
         <div className="flex items-baseline gap-2 mb-1">
           <h2 className="text-3xl font-bold">{formatCurrency(sellerStats.totalRevenue)}</h2>

@@ -4,6 +4,7 @@ import './globals.css'
 import { APP_CONFIG } from '@/lib/constants'
 import { CartProvider } from '@/lib/cartContext'
 import { WishlistProvider } from '@/lib/wishlistContext'
+import { RoleProvider } from '@/lib/roleContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider>
-          <WishlistProvider>
-            <div className="min-h-screen bg-gray-50">
-              {children}
-            </div>
-          </WishlistProvider>
-        </CartProvider>
+        <RoleProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <div className="min-h-screen bg-slate-50">
+                {children}
+              </div>
+            </WishlistProvider>
+          </CartProvider>
+        </RoleProvider>
       </body>
     </html>
   )

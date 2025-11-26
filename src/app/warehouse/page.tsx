@@ -59,7 +59,7 @@ export default function WarehousePage() {
       </div>
 
       {/* FarEye Banner */}
-      <div className="bg-gradient-to-r from-brand-primary to-orange-600 text-white p-4 mb-4">
+      <div className="bg-gradient-to-r from-brand-primary to-orange-600 text-slate-900 p-4 mb-4">
         <div className="flex items-center gap-3 mb-3">
           <Truck className="w-6 h-6" />
           <div>
