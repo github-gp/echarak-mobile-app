@@ -101,10 +101,14 @@ export default function DirectoryPage() {
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredStakeholders = stakeholders.filter((stakeholder) => {
-    const matchesSearch = stakeholder.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         stakeholder.products.some(p => p.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesCategory = selectedCategory === 'all' || stakeholder.type.toLowerCase().includes(selectedCategory);
-    const matchesState = selectedState === 'All States' || stakeholder.state === selectedState;
+    const matchesSearch =
+      stakeholder.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      stakeholder.products.some((p) => p.toLowerCase().includes(searchQuery.toLowerCase()));
+    const matchesCategory =
+      selectedCategory === 'all' ||
+      stakeholder.type.toLowerCase().includes(selectedCategory);
+    const matchesState =
+      selectedState === 'All States' || stakeholder.state === selectedState;
     return matchesSearch && matchesCategory && matchesState;
   });
 
@@ -150,7 +154,9 @@ export default function DirectoryPage() {
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary text-slate-900"
               >
                 {states.map((state) => (
-                  <option key={state} value={state}>{state}</option>
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
                 ))}
               </select>
             </div>
@@ -161,7 +167,9 @@ export default function DirectoryPage() {
       {/* Hero Banner */}
       <div className="bg-gradient-to-r from-green-700 to-emerald-800 text-white p-6 mb-4">
         <h2 className="text-xl font-bold mb-2">🌿 Find Verified Stakeholders</h2>
-        <p className="text-sm text-green-100">Connect with farmers, buyers, processors, and exporters in the medicinal plants ecosystem</p>
+        <p className="text-sm text-green-100">
+          Connect with farmers, buyers, processors, and exporters in the medicinal plants ecosystem
+        </p>
       </div>
 
       {/* Category Tabs */}
@@ -178,7 +186,9 @@ export default function DirectoryPage() {
                     : 'border-slate-200 bg-white hover:border-slate-300'
                 }`}
               >
-                tegory.icon className={`w-5 h-5 ${selectedCategory === category.id ? 'text-green-7000' : 'text-slate-600'}`} />
+                ategory.icon
+                  className={`w-5 h-5 ${selectedCategory === category.id ? 'text-green-700' : 'text-slate-600'}`}
+                />
                 <div className="text-left">
                   <p className={`text-sm font-semibold ${selectedCategory === category.id ? 'text-green-900' : 'text-slate-900'}`}>
                     {category.label}
