@@ -52,3 +52,31 @@ body {
   scrollbar-width: none;
 }
 
+/* Hide Google Translate top bar */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+/* Style the translate widget (if you want to show it) */
+#google_translate_element {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+#google_translate_element select {
+  padding: 8px;
+  border: 2px solid #1e40af;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+}

@@ -122,6 +122,9 @@ export default function MobileHeader() {
                     <button onClick={() => handleNavigation('/analytics/buyer')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                       📊 My Analytics
                     </button>
+                    <button onClick={() => handleNavigation('/messages')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                      💬 Messages
+                    </button>
                   </>
                 )}
 
@@ -141,6 +144,9 @@ export default function MobileHeader() {
                     </button>
                     <button onClick={() => handleNavigation('/analytics/farmer')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                       📈 My Analytics
+                    </button>
+                    <button onClick={() => handleNavigation('/messages')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                      💬 Messages
                     </button>
                   </>
                 )}
@@ -162,6 +168,9 @@ export default function MobileHeader() {
                 <button onClick={() => handleNavigation('/knowledge-base')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                   📚 Knowledge Base
                 </button>
+                <button onClick={() => handleNavigation('/export-support')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                  🌍 Export Support
+                </button>
                 <button onClick={() => handleNavigation('/orders')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                   📦 My Orders
                 </button>
@@ -173,6 +182,9 @@ export default function MobileHeader() {
                 </button>
                 <button onClick={() => handleNavigation('/profile')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                   👤 Profile
+                </button>
+                <button onClick={() => handleNavigation('/settings/language')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                  🌐 Language Settings
                 </button>
               </nav>
 
