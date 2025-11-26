@@ -53,7 +53,7 @@ export default function WarehousePage() {
           </button>
           <div className="flex-1">
             <h1 className="text-lg font-semibold">Warehouse Network</h1>
-            <p className="text-xs text-gray-500">Powered by FarEye Hub Management</p>
+            <p className="text-xs text-gray-500">Powered by FarEye Technologies Pvt Ltd</p>
           </div>
         </div>
       </div>

@@ -168,6 +168,12 @@ export default function MobileHeader() {
                 <button onClick={() => handleNavigation('/knowledge-base')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                   📚 Knowledge Base
                 </button>
+                <button onClick={() => handleNavigation('/directory')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                  📇 Stakeholder Directory
+                </button>
+                <button onClick={() => handleNavigation('/helpline')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
+                  🤖 NMPB Helpline & AI Chat
+                </button>
                 <button onClick={() => handleNavigation('/export-support')} className="block w-full text-left py-2.5 px-3 text-slate-700 hover:bg-blue-50 hover:text-brand-primary transition-colors font-medium rounded-lg">
                   🌍 Export Support
                 </button>
@@ -199,7 +205,7 @@ export default function MobileHeader() {
                 <div className="bg-gradient-to-r from-blue-700 to-blue-900 rounded-lg p-4 text-white text-center shadow-md">
                   <p className="text-xs font-semibold mb-1">Powered by</p>
                   <p className="text-lg font-bold">FarEye</p>
-                  <p className="text-xs text-blue-100 mt-1">Logistics Intelligence</p>
+                  <p className="text-xs text-blue-100 mt-1">Technologies Pvt Ltd</p>
                 </div>
               </div>
             </div>
