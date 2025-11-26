@@ -20,7 +20,8 @@ export default function ComparePage() {
       
       <div className="flex items-center justify-center h-96">
         <div className="text-center">
-          <p className="text-lg font-semibold text-slate-700 mb-4">Product comparison coming soon</p>
+          <p className="text-lg font-semibold text-slate-700 mb-4">Product Comparison</p>
+          <p className="text-sm text-slate-500 mb-4">Compare multiple products side-by-side</p>
           <Button onClick={() => router.push('/search')}>Browse Products</Button>
         </div>
       </div>
