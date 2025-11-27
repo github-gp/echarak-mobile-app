@@ -100,30 +100,29 @@ export default function DirectoryPage() {
   const [selectedState, setSelectedState] = useState('All States');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Map stakeholder type to category IDs for consistent filtering
-  const categoryTypeMap = {
-    'all': ['Farmer/Collector', 'Buyer/Manufacturer', 'Buyer/Trader', 'Processor', 'Exporter', 'Testing Lab'],
-    'farmers': ['Farmer/Collector'],
-    'buyers': ['Buyer/Manufacturer', 'Buyer/Trader'], // Assuming Buyer/Manufacturer and Buyer/Trader are related
-    'processors': ['Processor'],
-    'exporters': ['Exporter'],
-    'labs': ['Testing Lab'],
-  };
-
   const filteredStakeholders = stakeholders.filter((stakeholder) => {
     const matchesSearch =
       stakeholder.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       stakeholder.products.some((p) => p.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    // Adjust category matching to handle variations like 'Buyer/Manufacturer' and 'Buyer/Traders'
+    // Type-safe category mapping
+    const categoryTypeMap: Record<string, string[]> = {
+      all: [],
+      farmers: ['farmer', 'collector'],
+      buyers: ['buyer', 'trader', 'manufacturer'],
+      processors: ['processor'],
+      exporters: ['exporter'],
+      labs: ['lab', 'testing'],
+    };
+
     const categoryTypes = categoryTypeMap[selectedCategory] || [];
     const matchesCategory =
       selectedCategory === 'all' ||
-      categoryTypes.some(type => stakeholder.type.toLowerCase().includes(type.toLowerCase()));
+      categoryTypes.some((type) => stakeholder.type.toLowerCase().includes(type.toLowerCase()));
 
     const matchesState =
       selectedState === 'All States' || stakeholder.state === selectedState;
-      
+
     return matchesSearch && matchesCategory && matchesState;
   });
 
@@ -201,8 +200,7 @@ export default function DirectoryPage() {
                     : 'border-slate-200 bg-white hover:border-slate-300'
                 }`}
               >
-                {/* CORRECTED LINE: Category Icon rendering */}
-                <category.icon 
+                ategory.icon
                   className={`w-5 h-5 ${selectedCategory === category.id ? 'text-green-700' : 'text-slate-600'}`}
                 />
                 <div className="text-left">
