@@ -50,9 +50,9 @@ function CheckoutContent() {
           </h3>
           <div className="text-sm space-y-1">
             <p className="font-medium">{sampleUser.name}</p>
-            <p className="text-slate-600">{sampleUser.company}</p>
-            <p className="text-slate-600">{sampleUser.address.city}</p>
-            <p className="text-slate-600">Phone: {sampleUser.phone}</p>
+            <p className="text-slate-700">{sampleUser.company}</p>
+            <p className="text-slate-700">{sampleUser.address.city}</p>
+            <p className="text-slate-700">Phone: {sampleUser.phone}</p>
           </div>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-200">
@@ -63,11 +63,11 @@ function CheckoutContent() {
           <div className="flex items-center justify-between bg-blue-50 border border-blue-200 rounded-lg p-3">
             <div>
               <p className="font-semibold text-sm">{courierName}</p>
-              <p className="text-xs text-slate-600">FarEye Tracking</p>
+              <p className="text-xs text-slate-700">FarEye Tracking</p>
             </div>
             <div className="text-right">
               <p className="font-bold text-brand-primary">{formatCurrency(shippingCost)}</p>
-              <p className="text-xs text-slate-500">2-3 days</p>
+              <p className="text-xs text-slate-700">2-3 days</p>
             </div>
           </div>
         </div>
@@ -75,15 +75,15 @@ function CheckoutContent() {
           <h3 className="font-semibold mb-3">Order Summary</h3>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-slate-600">Items Total</span>
+              <span className="text-slate-700">Items Total</span>
               <span className="font-medium">{formatCurrency(cartTotal)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Shipping</span>
+              <span className="text-slate-700">Shipping</span>
               <span className="font-medium">{formatCurrency(shippingCost)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">GST</span>
+              <span className="text-slate-700">GST</span>
               <span className="font-medium">{formatCurrency(gst)}</span>
             </div>
             <div className="border-t pt-2 flex justify-between text-lg">
@@ -104,7 +104,7 @@ function CheckoutContent() {
                 <span className="text-2xl">{method.icon}</span>
                 <div className="flex-1">
                   <p className="font-medium text-sm">{method.name}</p>
-                  <p className="text-xs text-slate-500">{method.description}</p>
+                  <p className="text-xs text-slate-700">{method.description}</p>
                 </div>
                 {selectedPayment === method.id && <CheckCircle className="w-5 h-5 text-brand-primary" />}
               </label>
@@ -114,7 +114,7 @@ function CheckoutContent() {
       </div>
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 shadow-lg">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-sm text-slate-600">Total Amount</span>
+          <span className="text-sm text-slate-700">Total Amount</span>
           <span className="text-xl font-bold text-brand-primary">{formatCurrency(total)}</span>
         </div>
         <Button variant="primary" className="w-full" onClick={handlePlaceOrder} disabled={processing}>

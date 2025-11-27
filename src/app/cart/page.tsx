@@ -28,9 +28,9 @@ export default function CartPage() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center h-96">
-          <ShoppingBag className="w-24 h-24 text-slate-300 mb-4" />
-          <p className="text-slate-500 mb-2 text-lg">Your cart is empty</p>
-          <p className="text-sm text-slate-400 mb-4">Add some medicinal plants to get started</p>
+          <ShoppingBag className="w-24 h-24 text-slate-700 mb-4" />
+          <p className="text-slate-700 mb-2 text-lg">Your cart is empty</p>
+          <p className="text-sm text-slate-700 mb-4">Add some medicinal plants to get started</p>
           <Button onClick={() => router.push('/')}>Continue Shopping</Button>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function CartPage() {
             <ArrowLeft className="w-6 h-6" />
           </button>
           <h1 className="text-lg font-semibold">Shopping Cart</h1>
-          <span className="ml-auto text-sm text-slate-500">({cart.length} items)</span>
+          <span className="ml-auto text-sm text-slate-700">({cart.length} items)</span>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function CartPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-sm mb-1 truncate">{item.name}</h3>
-                <p className="text-xs text-slate-500 mb-2">{item.seller}</p>
+                <p className="text-xs text-slate-700 mb-2">{item.seller}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-bold text-brand-primary">
                     {formatCurrency(item.price * item.quantity)}
@@ -73,7 +73,7 @@ export default function CartPage() {
               </div>
             </div>
             <div className="flex items-center justify-between pt-3 border-t">
-              <span className="text-sm text-slate-600 font-medium">Quantity</span>
+              <span className="text-sm text-slate-700 font-medium">Quantity</span>
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => updateQuantity(item.id, item.quantity - 5)}
@@ -108,15 +108,15 @@ export default function CartPage() {
         <h3 className="font-semibold mb-3">Price Summary</h3>
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-slate-600">Subtotal</span>
+            <span className="text-slate-700">Subtotal</span>
             <span className="font-medium">{formatCurrency(cartTotal)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-slate-600">Shipping</span>
+            <span className="text-slate-700">Shipping</span>
             <span className="font-medium">{formatCurrency(shipping)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-slate-600">GST (18%)</span>
+            <span className="text-slate-700">GST (18%)</span>
             <span className="font-medium">{formatCurrency(gst)}</span>
           </div>
           <div className="border-t pt-2 flex justify-between text-lg">
@@ -128,7 +128,7 @@ export default function CartPage() {
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 shadow-lg">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-sm text-slate-600">Total Amount</span>
+          <span className="text-sm text-slate-700">Total Amount</span>
           <span className="text-xl font-bold text-brand-primary">{formatCurrency(total)}</span>
         </div>
         <Button variant="primary" className="w-full" onClick={() => router.push('/select-courier')}>

@@ -116,7 +116,7 @@ export default function HelplinePage() {
           </button>
           <div className="flex-1">
             <h1 className="text-lg font-semibold text-slate-900">NMPB Helpline</h1>
-            <p className="text-xs text-slate-600">Get instant support</p>
+            <p className="text-xs text-slate-700">Get instant support</p>
           </div>
           <HelpCircle className="w-6 h-6 text-blue-700" />
         </div>
@@ -128,7 +128,7 @@ export default function HelplinePage() {
             className={`flex-1 py-3 text-sm font-medium ${
               activeTab === 'chat'
                 ? 'text-blue-700 border-b-2 border-blue-700'
-                : 'text-slate-600'
+                : 'text-slate-700'
             }`}
           >
             <Bot className="w-5 h-5 inline mr-1" />
@@ -139,7 +139,7 @@ export default function HelplinePage() {
             className={`flex-1 py-3 text-sm font-medium ${
               activeTab === 'phone'
                 ? 'text-blue-700 border-b-2 border-blue-700'
-                : 'text-slate-600'
+                : 'text-slate-700'
             }`}
           >
             <Phone className="w-5 h-5 inline mr-1" />
@@ -150,7 +150,7 @@ export default function HelplinePage() {
             className={`flex-1 py-3 text-sm font-medium ${
               activeTab === 'email'
                 ? 'text-blue-700 border-b-2 border-blue-700'
-                : 'text-slate-600'
+                : 'text-slate-700'
             }`}
           >
             <Mail className="w-5 h-5 inline mr-1" />
@@ -194,7 +194,7 @@ export default function HelplinePage() {
                     </div>
                   )}
                   <p className="text-sm">{message.text}</p>
-                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-blue-100' : 'text-slate-700'}`}>
                     {message.time}
                   </p>
                 </div>
@@ -206,7 +206,7 @@ export default function HelplinePage() {
           <div className="sticky bottom-0 bg-white border-t border-slate-200 p-4">
             <div className="flex items-center gap-2">
               <button className="p-2 hover:bg-slate-100 rounded-lg">
-                <Paperclip className="w-5 h-5 text-slate-600" />
+                <Paperclip className="w-5 h-5 text-slate-700" />
               </button>
               <input
                 type="text"
@@ -217,7 +217,7 @@ export default function HelplinePage() {
                 className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent text-slate-900"
               />
               <button className="p-2 hover:bg-slate-100 rounded-lg">
-                <Mic className="w-5 h-5 text-slate-600" />
+                <Mic className="w-5 h-5 text-slate-700" />
               </button>
               <button
                 onClick={handleSendMessage}
@@ -252,7 +252,7 @@ export default function HelplinePage() {
                     <a href={`tel:${contact.number}`} className="text-blue-700 font-bold text-lg mb-1 block hover:underline">
                       {contact.number}
                     </a>
-                    <p className="text-xs text-slate-600">⏰ {contact.timing}</p>
+                    <p className="text-xs text-slate-700">⏰ {contact.timing}</p>
                   </div>
                   <a
                     href={`tel:${contact.number}`}

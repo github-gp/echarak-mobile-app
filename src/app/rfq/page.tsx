@@ -101,30 +101,30 @@ export default function RFQPage() {
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-medium text-slate-500">{rfq.id}</span>
+                    <span className="text-xs font-medium text-slate-700">{rfq.id}</span>
                     <Badge variant={rfq.status === 'active' ? 'success' : 'secondary'}>
                       {rfq.status.toUpperCase()}
                     </Badge>
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-1">{rfq.product}</h3>
-                  <p className="text-sm text-slate-600">Quantity: {rfq.quantity}</p>
+                  <p className="text-sm text-slate-700">Quantity: {rfq.quantity}</p>
                 </div>
                 <FileText className="w-5 h-5 text-brand-primary" />
               </div>
 
               <div className="bg-slate-50 rounded-lg p-3 mb-3">
-                <p className="text-xs text-slate-600 mb-1">Specifications:</p>
+                <p className="text-xs text-slate-700 mb-1">Specifications:</p>
                 <p className="text-sm text-slate-800">{rfq.specifications}</p>
               </div>
 
               <div className="flex items-center justify-between text-sm">
                 <div className="flex items-center gap-4">
                   <div>
-                    <p className="text-xs text-slate-600">Target Price</p>
+                    <p className="text-xs text-slate-700">Target Price</p>
                     <p className="font-bold text-brand-primary">{formatCurrency(rfq.targetPrice)}/kg</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-600">Quotes Received</p>
+                    <p className="text-xs text-slate-700">Quotes Received</p>
                     <p className="font-bold text-slate-900">{rfq.quotesReceived}</p>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export default function RFQPage() {
                 )}
                 {rfq.status === 'closed' && rfq.bestQuote && (
                   <div className="text-right">
-                    <p className="text-xs text-slate-600">Best Quote</p>
+                    <p className="text-xs text-slate-700">Best Quote</p>
                     <p className="font-bold text-green-600">{formatCurrency(rfq.bestQuote)}/kg</p>
                   </div>
                 )}
@@ -147,8 +147,8 @@ export default function RFQPage() {
 
         {filteredRFQs.length === 0 && (
           <div className="text-center py-12">
-            <FileText className="w-16 h-16 text-slate-300 mx-auto mb-3" />
-            <p className="text-slate-500">No {activeTab} RFQs</p>
+            <FileText className="w-16 h-16 text-slate-700 mx-auto mb-3" />
+            <p className="text-slate-700">No {activeTab} RFQs</p>
           </div>
         )}
       </div>

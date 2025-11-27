@@ -50,7 +50,7 @@ export default function SubmitBidPage() {
           <p className="text-slate-600 mb-4">
             Your quote has been sent to {rfqDetails.buyer}. You'll be notified when they review it.
           </p>
-          <p className="text-sm text-slate-500">Redirecting to your bids...</p>
+          <p className="text-sm text-slate-700">Redirecting to your bids...</p>
         </div>
       </div>
     );
@@ -77,15 +77,15 @@ export default function SubmitBidPage() {
           <h3 className="font-semibold text-slate-900 mb-3">RFQ Details</h3>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-slate-600">Quantity Required</span>
+              <span className="text-slate-700">Quantity Required</span>
               <span className="font-medium text-slate-900">{rfqDetails.quantity.toLocaleString()} {rfqDetails.unit}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-600">Target Price</span>
+              <span className="text-slate-700">Target Price</span>
               <span className="font-medium text-emerald-700">{formatCurrency(rfqDetails.targetPrice)}/{rfqDetails.unit}</span>
             </div>
             <div className="pt-2 border-t">
-              <p className="text-xs text-slate-600 mb-1">Specifications:</p>
+              <p className="text-xs text-slate-700 mb-1">Specifications:</p>
               <p className="text-slate-800">{rfqDetails.specifications}</p>
             </div>
           </div>

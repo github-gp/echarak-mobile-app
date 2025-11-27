@@ -80,3 +80,26 @@ body {
   font-size: 14px;
   background: white;
 }
+/* Force readable text colors on all devices */
+body {
+  color: #1e293b; /* slate-900 */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Ensure all text elements are readable */
+p, span, div, h1, h2, h3, h4, h5, h6, a, button, label {
+  color: inherit;
+}
+
+/* Override any light greys */
+.text-slate-600 {
+  color: #475569 !important; /* Darker slate-600 */
+}
+
+.text-slate-700 {
+  color: #334155 !important; /* Ensure slate-700 is dark */
+}
+
+.text-slate-900 {
+  color: #0f172a !important; /* Ensure slate-900 is darkest */
+}

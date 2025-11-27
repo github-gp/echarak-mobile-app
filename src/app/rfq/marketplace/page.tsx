@@ -77,7 +77,7 @@ export default function RFQMarketplacePage() {
           </button>
           <div>
             <h1 className="text-lg font-semibold text-slate-900">RFQ Marketplace</h1>
-            <p className="text-xs text-slate-600">Bid on buyer requirements</p>
+            <p className="text-xs text-slate-700">Bid on buyer requirements</p>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function RFQMarketplacePage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-medium text-slate-500">{rfq.id}</span>
+                      <span className="text-xs font-medium text-slate-700">{rfq.id}</span>
                       <Badge variant="success">{rfq.bidsReceived} bids</Badge>
                     </div>
                     <h3 className="font-bold text-slate-900 text-base mb-1">{rfq.product}</h3>
@@ -129,33 +129,33 @@ export default function RFQMarketplacePage() {
               <div className="p-4">
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <div>
-                    <p className="text-xs text-slate-600 mb-1">Quantity Required</p>
+                    <p className="text-xs text-slate-700 mb-1">Quantity Required</p>
                     <p className="font-bold text-slate-900">{rfq.quantity.toLocaleString()} {rfq.unit}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-600 mb-1">Target Price</p>
+                    <p className="text-xs text-slate-700 mb-1">Target Price</p>
                     <p className="font-bold text-emerald-700">{formatCurrency(rfq.targetPrice)}/{rfq.unit}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-600 mb-1">Delivery Location</p>
+                    <p className="text-xs text-slate-700 mb-1">Delivery Location</p>
                     <p className="text-sm text-slate-900 flex items-center gap-1">
                       <MapPin className="w-3 h-3" />
                       {rfq.location}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-600 mb-1">Required By</p>
+                    <p className="text-xs text-slate-700 mb-1">Required By</p>
                     <p className="text-sm text-slate-900">{rfq.deliveryDate}</p>
                   </div>
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-3 mb-3">
-                  <p className="text-xs text-slate-600 mb-1 font-medium">Specifications:</p>
+                  <p className="text-xs text-slate-700 mb-1 font-medium">Specifications:</p>
                   <p className="text-sm text-slate-800">{rfq.specifications}</p>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Posted {rfq.postedDate}</span>
+                  <span className="text-xs text-slate-700">Posted {rfq.postedDate}</span>
                   <Button
                     variant="primary"
                     size="sm"
