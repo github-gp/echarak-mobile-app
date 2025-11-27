@@ -32,7 +32,7 @@ export default function BuyerDashboard() {
   return (
     <div className="min-h-screen bg-slate-50 pb-20">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white p-6 pb-8">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 text-white p-6 pb-8">
         <h1 className="text-2xl font-bold mb-2">Welcome Back! 🙏</h1>
         <p className="text-blue-100 text-sm mb-4">Find the best medicinal plants at competitive prices</p>
         
@@ -154,7 +154,7 @@ export default function BuyerDashboard() {
       <div className="px-4 mb-6">
         <div
           onClick={() => router.push('/export-support')}
-          className="bg-gradient-to-r from-purple-700 to-indigo-800 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition-shadow"
+          className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg p-4 text-white cursor-pointer hover:shadow-lg transition-shadow"
         >
           <div className="flex items-center gap-3">
             <Globe className="w-8 h-8" />
