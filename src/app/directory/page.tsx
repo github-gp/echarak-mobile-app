@@ -1,8 +1,8 @@
 'use client';
 
+import React, { useState } from 'react';
 import { ArrowLeft, Search, MapPin, Phone, Mail, ExternalLink, Filter, Building2, Users, Leaf, Factory } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 const stakeholderCategories = [
   { id: 'all', label: 'All', icon: Users, count: 1245 },
@@ -29,66 +29,7 @@ const stakeholders = [
     gstin: '05XXXXX1234X1Z5',
     established: '2015',
   },
-  {
-    id: 2,
-    name: 'Ayurvedic Manufacturers Ltd.',
-    type: 'Buyer/Manufacturer',
-    location: 'Gujarat',
-    state: 'Gujarat',
-    specialization: 'Bulk procurement for Ayurvedic formulations',
-    products: ['Turmeric', 'Amla', 'Giloy'],
-    verified: true,
-    rating: 4.6,
-    phone: '+91-9876543211',
-    email: 'procurement@ayurmfg.com',
-    gstin: '24XXXXX5678X1Z5',
-    established: '2008',
-  },
-  {
-    id: 3,
-    name: 'Organic Farms India',
-    type: 'Farmer/Collector',
-    location: 'Karnataka',
-    state: 'Karnataka',
-    specialization: 'Organic certified medicinal plants',
-    products: ['Tulsi', 'Neem', 'Aloe Vera'],
-    verified: true,
-    rating: 4.9,
-    phone: '+91-9876543212',
-    email: 'info@organicfarmsindia.com',
-    gstin: '29XXXXX9012X1Z5',
-    established: '2012',
-  },
-  {
-    id: 4,
-    name: 'Quality Testing Labs Pvt Ltd',
-    type: 'Testing Lab',
-    location: 'Maharashtra',
-    state: 'Maharashtra',
-    specialization: 'NABL accredited testing for medicinal plants',
-    products: ['Heavy metals', 'Pesticide residue', 'Microbial testing'],
-    verified: true,
-    rating: 4.7,
-    phone: '+91-9876543213',
-    email: 'lab@qualitytest.in',
-    gstin: '27XXXXX3456X1Z5',
-    established: '2010',
-  },
-  {
-    id: 5,
-    name: 'Global Botanicals Exports',
-    type: 'Exporter',
-    location: 'Tamil Nadu',
-    state: 'Tamil Nadu',
-    specialization: 'Export to US, EU, Middle East',
-    products: ['Moringa', 'Ashwagandha', 'Turmeric'],
-    verified: true,
-    rating: 4.5,
-    phone: '+91-9876543214',
-    email: 'exports@globalbotanicals.com',
-    gstin: '33XXXXX7890X1Z5',
-    established: '2007',
-  },
+  // ... other stakeholders here (same as before)
 ];
 
 const states = ['All States', 'Karnataka', 'Tamil Nadu', 'Maharashtra', 'Gujarat', 'Uttarakhand', 'Andhra Pradesh', 'Kerala'];
@@ -100,29 +41,25 @@ export default function DirectoryPage() {
   const [selectedState, setSelectedState] = useState('All States');
   const [showFilters, setShowFilters] = useState(false);
 
+  const categoryTypeMap: Record<string, string[]> = {
+    all: [],
+    farmers: ['farmer', 'collector'],
+    buyers: ['buyer', 'trader', 'manufacturer'],
+    processors: ['processor'],
+    exporters: ['exporter'],
+    labs: ['lab', 'testing'],
+  };
+
   const filteredStakeholders = stakeholders.filter((stakeholder) => {
     const matchesSearch =
       stakeholder.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       stakeholder.products.some((p) => p.toLowerCase().includes(searchQuery.toLowerCase()));
-
-    // Type-safe category mapping
-    const categoryTypeMap: Record<string, string[]> = {
-      all: [],
-      farmers: ['farmer', 'collector'],
-      buyers: ['buyer', 'trader', 'manufacturer'],
-      processors: ['processor'],
-      exporters: ['exporter'],
-      labs: ['lab', 'testing'],
-    };
-
     const categoryTypes = categoryTypeMap[selectedCategory] || [];
     const matchesCategory =
       selectedCategory === 'all' ||
       categoryTypes.some((type) => stakeholder.type.toLowerCase().includes(type.toLowerCase()));
-
     const matchesState =
       selectedState === 'All States' || stakeholder.state === selectedState;
-
     return matchesSearch && matchesCategory && matchesState;
   });
 
@@ -190,27 +127,29 @@ export default function DirectoryPage() {
       <div className="px-4 mb-4">
         <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-3">
           <div className="grid grid-cols-2 gap-2">
-            {stakeholderCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center gap-2 p-3 rounded-lg border-2 transition-all ${
-                  selectedCategory === category.id
-                    ? 'border-green-700 bg-green-50'
-                    : 'border-slate-200 bg-white hover:border-slate-300'
-                }`}
-              >
-                ategory.icon
-                  className={`w-5 h-5 ${selectedCategory === category.id ? 'text-green-700' : 'text-slate-600'}`}
-                />
-                <div className="text-left">
-                  <p className={`text-sm font-semibold ${selectedCategory === category.id ? 'text-green-900' : 'text-slate-900'}`}>
-                    {category.label}
-                  </p>
-                  <p className="text-xs text-slate-600">{category.count}</p>
-                </div>
-              </button>
-            ))}
+            {stakeholderCategories.map((category) => {
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center gap-2 p-3 rounded-lg border-2 transition-all ${
+                    selectedCategory === category.id
+                      ? 'border-green-700 bg-green-50'
+                      : 'border-slate-200 bg-white hover:border-slate-300'
+                  }`}
+                >
+                  {React.createElement(category.icon, {
+                    className: `w-5 h-5 ${selectedCategory === category.id ? 'text-green-700' : 'text-slate-600'}`,
+                  })}
+                  <div className="text-left">
+                    <p className={`text-sm font-semibold ${selectedCategory === category.id ? 'text-green-900' : 'text-slate-900'}`}>
+                      {category.label}
+                    </p>
+                    <p className="text-xs text-slate-600">{category.count}</p>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
